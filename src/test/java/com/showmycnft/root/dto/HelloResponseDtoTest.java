@@ -1,4 +1,4 @@
-package com.showmycnft.root.web.dto;
+package com.showmycnft.root.dto;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;

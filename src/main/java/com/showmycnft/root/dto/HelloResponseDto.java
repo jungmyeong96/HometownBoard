@@ -1,4 +1,4 @@
-package com.showmycnft.root.web.dto;
+package com.showmycnft.root.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
