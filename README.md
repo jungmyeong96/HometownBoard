@@ -3,8 +3,10 @@
 Cardano Dapp Project
 
 ---
+> This is a Spring Boot project that applies the MVC pattern and has a 3-tier structure.
 
 ## **Architecture Design**
+
 
 ### **Frontend**
 
@@ -23,6 +25,22 @@ Cardano Dapp Project
 
 - [ ]  Host server using AWS EC2 instance.
 
+----
+##  Development tool
+
+### **Build tool**
+- Gradle
+
+### **Implementation tool**
+- JDK
+- IntelliJ IDEA
+
+### Test tool
+- JUnit
+
+### Version control tool
+- git
+
 
 <br/>
 <br/>
@@ -35,6 +53,8 @@ Cardano Dapp Project
 Cardano Dapp project
 
 ---
+> MVC 패턴을 적용하고 3-tier 구조로 되어 있는 Spring Boot 프로젝트입니다.
+
 ## 아키텍쳐 구조설계
 
 ### 프론트엔드
@@ -50,6 +70,23 @@ Cardano Dapp project
 
 ### 인프라
 1. [ ] AWS EC2 인스턴스를 사용하여 서버를 호스팅합니다.
+
+
+----
+## 개발 도구
+
+### 빌드 도구
+- Gradle
+
+### 구현 도구
+- JDK
+- IntelliJ IDEA
+
+### 테스트 도구
+- JUnit
+
+### 형상 관리 도구
+- git
   
 ---
 
