@@ -39,6 +39,7 @@ public class PostsApiControllerTest {
         postsRepository.deleteAll();
     }
 
+
     @Test
     public void testSetPosts() throws Exception {
         //given
