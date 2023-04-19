@@ -10,4 +10,9 @@ public class IndexController {
     public String index() {
         return "index"; // mustache 스타터가 앞의 경로와 확장자를 자동으로 지정
     }
+
+    @GetMapping("/posts/save")
+    public String postsSave() {
+        return "posts-save"; //posts-save.mustache 호출
+    }
 }
