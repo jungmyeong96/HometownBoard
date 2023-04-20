@@ -2,12 +2,16 @@ package com.showmycnft.root.service.posts;
 
 import com.showmycnft.root.domain.posts.Posts;
 import com.showmycnft.root.domain.posts.PostsRepository;
+import com.showmycnft.root.web.dto.PostsListResponseDto;
 import com.showmycnft.root.web.dto.PostsResponseDto;
 import com.showmycnft.root.web.dto.PostsSaveRequestDto;
 import com.showmycnft.root.web.dto.PostsUpdateRequestDto;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -29,6 +33,13 @@ public class PostsService {
 
         return id;
 
+    }
+
+    @Transactional(readOnly = true) //속도개선
+    public List<PostsListResponseDto> findAllDesc() { //posts의 stream을 map을 통해 변환하고 list에 저장
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
     }
 
     public PostsResponseDto findById(Long id) {
