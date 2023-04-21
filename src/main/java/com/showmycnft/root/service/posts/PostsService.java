@@ -32,7 +32,14 @@ public class PostsService {
         posts.update(requestDto.getTitle(), requestDto.getContent()); //영속성 컨텍스트
 
         return id;
+    }
 
+    @Transactional
+    public void delete (Long id) {
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
+
+        postsRepository.delete(posts);
     }
 
     @Transactional(readOnly = true) //속도개선
