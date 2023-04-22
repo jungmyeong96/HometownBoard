@@ -4,6 +4,10 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### oauth-security ###
+application-oauth.properties
+
+
 ### IntelliJ IDEA ###
 .idea
 .idea/modules.xml
