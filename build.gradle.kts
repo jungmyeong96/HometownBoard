@@ -18,6 +18,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa") // 스프링 부트용 Spring Data Jpa 추상화 라이브러리입니다.
     implementation("com.h2database:h2") // 인메모리 관계형 데이터베이스입니다. 테스트 용도로 사용
     implementation("org.springframework.boot:spring-boot-starter-mustache")
+    implementation("org.springframework.boot:spring-boot-starter-oauth2client") // 소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현 시 필요합니다.
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
