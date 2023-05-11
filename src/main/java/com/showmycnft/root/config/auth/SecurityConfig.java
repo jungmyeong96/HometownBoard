@@ -18,8 +18,8 @@ public class SecurityConfig {
         http.csrf().disable()
                 .headers().frameOptions().disable() //h2 console 화면을 사용하기 위해 해당 옵션들을 사용하지 않을 것 입니다.
                 .and().authorizeRequests() //URL별 권한 관리를 설정하는 옵션, antMatchers옵션 사용하기 위함
-                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll() //권한 관리 대상을 지정
-                .antMatchers("/api/v1/**").hasRole(Role.USER.name()) //RBAC
+                .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll() //권한 관리 대상을 지정
+                .requestMatchers("/api/v1/**").hasRole(Role.USER.name()) //RBAC
                 .anyRequest().authenticated() //나머지 처리 authenticated()를 추가해서 나머지는 모두 인증된 사용자들에게만 허용하게함
                 .and().logout().logoutSuccessUrl("/") //로그아웃 기능에 대한 여러 설정의 진입점이고 로그아웃 시 /로 이동
                 .and().oauth2Login() //

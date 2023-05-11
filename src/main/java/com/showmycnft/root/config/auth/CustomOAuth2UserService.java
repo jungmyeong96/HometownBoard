@@ -21,14 +21,15 @@ import java.util.Collections;
 @Service
 public class CustomOAuth2UserService
         implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
+
     private final UserRepository userRepository;
     private final HttpSession httpSession;
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest)
             throws OAuth2AuthenticationException {
+
         OAuth2UserService<OAuth2UserRequest, OAuth2User>
                 delegate = new DefaultOAuth2UserService();
-
         OAuth2User oAuth2User = delegate.
                 loadUser(userRequest);
 
@@ -40,12 +41,17 @@ public class CustomOAuth2UserService
         //구글은 기본 코드지원 네이버,카카오는 지원 x
 
         OAuthAttributes attributes = OAuthAttributes.
-                of(registrationId, userNameAttributeName,
-                        oAuth2User.getAttributes()); // OAuth2UserService를 통해 가져온 OAuth2User의 attribute를 담을 클래스입니다.
+                of(
+                        registrationId,
+                        userNameAttributeName,
+                        oAuth2User
+                                .getAttributes()); // OAuth2UserService를 통해 가져온 OAuth2User의 attribute를 담을 클래스입니다.
 
         User user = saveOrUpdate(attributes);
+
         httpSession.setAttribute("user", new SessionUser(user)); // SessionUser는 세션에 사용자 정보를 저장하기 위한 Dto클래스입니다.
         //Session에 저장하기 위해서는 직렬화를 해야하기 때문에 기존의 USER대신 SessionUser DTO를 생성하였습니다.
+
         return new DefaultOAuth2User(
                 Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
                 attributes.getAttributes(),
