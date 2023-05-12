@@ -23,9 +23,12 @@ dependencies {
     //implementation("org.jetbrains:annotations:24.0.0") // 소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현 시 필요합니다.
     implementation("org.springframework.session:spring-session-jdbc")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.security:spring-security-test")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("junit:junit:4.13.1")
+    annotationProcessor("org.projectlombok:lombok")
+    testAnnotationProcessor("org.projectlombok:lombok")
 }
 
 tasks.test {
