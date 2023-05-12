@@ -64,7 +64,6 @@ public class CustomOAuth2UserService
                             getName(), attributes.getPicture()))
                     .orElse(attributes.toEntity());
 
-        return userRepository.save(user);
-
+            return userRepository.save(user);
         }
 }
