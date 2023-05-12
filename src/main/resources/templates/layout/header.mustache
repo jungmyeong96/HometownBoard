@@ -1,9 +1,77 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>ShowMyCNFT</title>
+    <title>HometownBoard</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-<body>
+    <style>
+        body {
+            background-image: url('images/StickyBoard2.jpg');
+            background-size: cover;
+            padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+
+      .table {
+          border: none;
+          border-collapse: separate;
+          border-spacing: 0 8px;
+          background-color: #edf7ed; /* 은은한 초록색 배경 */
+          border-radius: 5px;
+        }
+
+        .table thead th {
+          background-color: #4caf50; /* 헤더 색상 */
+          border-top: none;
+          border-bottom: 1px solid #ccc;
+          padding: 10px 15px;
+          vertical-align: middle;
+          font-weight: bold;
+          color: white;
+        }
+
+        .table td, .table th {
+          border: none;
+          background-color: #f0fff0; /* 셀 색상 */
+          padding: 10px 15px;
+          vertical-align: middle;
+          position: relative;
+        }
+
+        .table td:before, .table th:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 1px;
+          background-color: #ccc;
+        }
+
+        .table td:last-child:before, .table th:last-child:before {
+          display: none;
+        }
+
+        .table td:first-child:before, .table th:first-child:before {
+          border-left: none;
+        }
+
+        .btn-primary {
+          margin-bottom: 10px;
+        }
+
+        #user {
+          font-weight: bold;
+          margin-right: 10px;
+        }
+
+        .navbar {
+            justify-content: flex-end;
+            background-color: transparent;
+        }
+    </style>

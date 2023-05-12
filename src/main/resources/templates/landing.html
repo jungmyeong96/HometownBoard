@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HometownBoard</title>
+    <style>
+    body {
+      background-image: url('images/StickyBoard.jpg');
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    .container {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+
+    .google {
+      background-color: #4285F4;
+    }
+
+    .naver {
+      background-color: #1EC800;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        HometownBoard
+    </div>
+    <div class="buttons">
+        <button class="button google" onclick="location.href='/oauth2/authorization/google'";>Google 로그인</button>
+        <button class="button naver" onclick="location.href='/oauth2/authorization/naver'";>Naver 로그인</button>
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--<!DOCTYPE HTML>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>ShowMyCNFT</title>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+
+
+
+<!--</head>-->
+<!--<body>-->
+<!--        <div class="container">-->
+<!--          <div class="logo">-->
+<!--            adsfasdfadsfadsfadsfsdf-->
+<!--          </div>-->
+<!--          <div class="buttons">-->
+<!--        &lt;!&ndash;    <button class="button google">Google 로그인</button>&ndash;&gt;-->
+<!--            <a href="/oauth2/authorization/google"-->
+<!--               class="btn btn-secondary active"-->
+<!--               role="button">Google Login</a>-->
+
+<!--            <a href="/oauth2/authorization/naver"-->
+<!--               class="btn btn-secondary active"-->
+<!--               role="button">Naver Login</a>-->
+<!--        &lt;!&ndash;    <button class="button naver">Naver 로그인</button>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--</body>-->
+<!--</html>-->
