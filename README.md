@@ -1,6 +1,5 @@
-# **ShowMyCNFT**
-
-Cardano Dapp Project
+# **Hometown Board**
+This is a bulletin board that contains all the stories of the neighborhood.
 
 ---
 > This is a Spring Boot project that applies the MVC pattern and has a 3-tier structure.
@@ -10,14 +9,14 @@ Cardano Dapp Project
 
 ### **Frontend**
 
-- [ ]  Development using temporary JPA (Considering migration to React.js)
+- [x]  Development using temporary JPA (Considering migration to React.js)
 
 ### **Backend**
 
-- [ ]  Develop RESTful API using Java Spring Framework.
-- [ ]  Implement SSO authentication.
+- [x]  Develop RESTful API using Java Spring Framework.
+- [x]  Implement SSO authentication.
 - [ ]  Use MySQL database to store data. (Considering migration to AWS RDS)
-- [ ]  Map objects to database using Spring Data JPA.
+- [x]  Map objects to database using Spring Data JPA.
 - [ ]  Store image files in a distributed manner using IPFS (InterPlanetary File System).
   Server (Considering AWS S3)
 
@@ -49,8 +48,8 @@ Cardano Dapp Project
 
 
 
-# ShowMyCNFT
-Cardano Dapp project
+# Hometown Board
+동네의 모든 이야기를 담는 게시판입니다.
 
 ---
 > MVC 패턴을 적용하고 3-tier 구조로 되어 있는 Spring Boot 프로젝트입니다.
@@ -58,13 +57,13 @@ Cardano Dapp project
 ## 아키텍쳐 구조설계
 
 ### 프론트엔드
-- [ ] 임시 JPA를 통한 개발 (React.js 마이그레이션 고민중)
+- [x] 임시 JPA를 통한 개발 (React.js 마이그레이션 고민중)
 
 ### 백엔드
-1. [ ] Java Spring Framework를 사용하여 RESTful API를 개발합니다.
-2. [ ] SSO 인증 구현
+1. [x] Java Spring Framework를 사용하여 RESTful API를 개발합니다.
+2. [x] SSO 인증 구현
 3. [ ] MySQL 데이터베이스를 사용하여 데이터를 저장합니다. (AWS RDS 마이그레이션 고민 중)
-4. [ ] Spring Data JPA를 사용하여 객체와 데이터베이스를 매핑합니다.
+4. [x] Spring Data JPA를 사용하여 객체와 데이터베이스를 매핑합니다.
 5. [ ] IPFS (InterPlanetary File System)를 사용하여 이미지 파일을 분산 저장합니다.
   서버 (AWS S3 고민중)
 

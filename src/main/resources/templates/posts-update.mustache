@@ -1,8 +1,13 @@
 {{>layout/header}}
 
+{{>styles/postStyle}}
+
+</head>
+<body>
+
 <h1>게시글 수정</h1>
 
-<div class="col-md-12">
+<div class="container d-flex justify-content-center align-items-center vh-70 ">
     <div class="col-md-4">
         <form>
             <div class="form-group">
@@ -23,8 +28,8 @@
             </div>
         </form>
         <a href="/index" role="button" class="btn btn-secondary">취소</a>
-        <button type="button" class="btn btn-primary" id="btn-update" onclick="location.href='/index';">수정 완료</button>
-        <button type="button" class="btn btn-danger" id="btn-delete" onclick="location.href='/index';">삭제</button>
+        <button type="button" class="btn btn-primary" id="btn-update" >수정 완료</button>
+        <button type="button" class="btn btn-danger" id="btn-delete" >삭제</button>
     </div>
 </div>
 

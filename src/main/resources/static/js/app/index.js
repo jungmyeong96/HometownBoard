@@ -26,9 +26,9 @@ var main = { //함수 선언으로 index.js 만의 유효범위 scope 만들기
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 등록되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/index';
         }).fail(function (error) {
-            alert(JSON.stringify(error));
+            alert("에러가 발생되었습니다.\n", JSON.stringify(error));
         });
    },
    update : function () {
@@ -47,9 +47,9 @@ var main = { //함수 선언으로 index.js 만의 유효범위 scope 만들기
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 수정되었습니다.');
-                window.location.href = '/';
+                window.location.href = '/index';
             }).fail(function (error) {
-                alert(JSON.stringify(error));
+                alert("에러가 발생되었습니다.\n", JSON.stringify(error));
             });
    },
    delete : function () {
@@ -62,9 +62,9 @@ var main = { //함수 선언으로 index.js 만의 유효범위 scope 만들기
             contentType:'application/json; charset=utf-8'
         }).done(function() {
             alert('글이 삭제되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/index';
         }).fail(function (error) {
-            alert(JSON.stringify(error));
+            alert("에러가 발생되었습니다.\n", JSON.stringify(error));
         });
    }
 };

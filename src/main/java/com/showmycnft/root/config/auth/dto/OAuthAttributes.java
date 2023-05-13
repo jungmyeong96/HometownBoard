@@ -60,12 +60,12 @@ public class OAuthAttributes {
                 .build();
     }
 
-    public User toEntity() { //user 엔티티 생성 후, GUEST처리
+    public User toEntity() { //user 엔티티 생성 후, GUEST처리 //일단 USER로 재변경
         return User.builder()
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .role(Role.GUEST)
+                .role(Role.USER)
                 .build();
     }
 }
