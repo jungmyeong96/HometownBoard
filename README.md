@@ -9,7 +9,7 @@ This is a bulletin board that contains all the stories of the neighborhood.
 
 ### **Frontend**
 
-- [x]  Development using temporary JPA (Considering migration to React.js)
+- [x]  Development using temporary template (Considering migration to React.js)
 
 ### **Backend**
 
@@ -89,7 +89,7 @@ spring.security.oauth2.client.provider.naver.user_name_attribute=response
 ## 아키텍쳐 구조설계
 
 ### 프론트엔드
-- [x] 임시 JPA를 통한 개발 (React.js 마이그레이션 고민중)
+- [x] 임시 템플릿 통한 개발 (React.js 마이그레이션 고민중)
 
 ### 백엔드
 1. [x] Java Spring Framework를 사용하여 RESTful API를 개발합니다.
