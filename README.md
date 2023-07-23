@@ -41,6 +41,38 @@ This is a bulletin board that contains all the stories of the neighborhood.
 - git
 
 
+---
+
+##  env
+applications-oauth.properties
+```
+# 꾸글이지롱!
+# registration
+
+spring.security.oauth2.client.registration.google.client-id=[client-id] <--추가
+spring.security.oauth2.client.registration.google.client-secret=[client-secret] <--추가
+spring.security.oauth2.client.registration.google.scope=profile,email
+
+
+# 네이바지롱!
+# registration
+spring.security.oauth2.client.registration.naver.client-id=[client-id] <--추가
+spring.security.oauth2.client.registration.naver.client-secret=[client-secret] <--추가
+spring.security.oauth2.client.registration.naver.redirect-uri={baseUrl}/{action}/oauth2/code/{registrationId}
+spring.security.oauth2.client.registration.naver.authorization_grant_type=authorization_code
+spring.security.oauth2.client.registration.naver.scope=name,email,profile_image
+spring.security.oauth2.client.registration.naver.client-name=Naver
+
+
+# provider
+spring.security.oauth2.client.provider.naver.authorization_uri=https://nid.naver.com/oauth2.0/authorize
+spring.security.oauth2.client.provider.naver.token_uri=https://nid.naver.com/oauth2.0/token
+spring.security.oauth2.client.provider.naver.user-info-uri=https://openapi.naver.com/v1/nid/me
+spring.security.oauth2.client.provider.naver.user_name_attribute=response
+```
+
+
+
 <br/>
 <br/>
 
@@ -89,4 +121,31 @@ This is a bulletin board that contains all the stories of the neighborhood.
   
 ---
 
+## 환경 설정
+applications-oauth.properties
+```
+# 꾸글이지롱!
+# registration
+
+spring.security.oauth2.client.registration.google.client-id=[client-id] <--추가
+spring.security.oauth2.client.registration.google.client-secret=[client-secret] <--추가
+spring.security.oauth2.client.registration.google.scope=profile,email
+
+
+# 네이바지롱!
+# registration
+spring.security.oauth2.client.registration.naver.client-id=[client-id] <--추가
+spring.security.oauth2.client.registration.naver.client-secret=[client-secret] <--추가
+spring.security.oauth2.client.registration.naver.redirect-uri={baseUrl}/{action}/oauth2/code/{registrationId}
+spring.security.oauth2.client.registration.naver.authorization_grant_type=authorization_code
+spring.security.oauth2.client.registration.naver.scope=name,email,profile_image
+spring.security.oauth2.client.registration.naver.client-name=Naver
+
+
+# provider
+spring.security.oauth2.client.provider.naver.authorization_uri=https://nid.naver.com/oauth2.0/authorize
+spring.security.oauth2.client.provider.naver.token_uri=https://nid.naver.com/oauth2.0/token
+spring.security.oauth2.client.provider.naver.user-info-uri=https://openapi.naver.com/v1/nid/me
+spring.security.oauth2.client.provider.naver.user_name_attribute=response
+```
 

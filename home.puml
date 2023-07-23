@@ -1,0 +1,136 @@
+@startuml
+class com.showmycnft.root.config.auth.LoginUserArgumentResolver {
+- HttpSession httpSession
++ boolean supportsParameter(MethodParameter)
++ Object resolveArgument(MethodParameter,ModelAndViewContainer,NativeWebRequest,WebDataBinderFactory)
+}
+class com.showmycnft.root.config.auth.CustomOAuth2UserService {
+- UserRepository userRepository
+- HttpSession httpSession
++ OAuth2User loadUser(OAuth2UserRequest)
+- User saveOrUpdate(OAuthAttributes)
+}
+class com.showmycnft.root.config.auth.dto.SessionUser {
+- String name
+- String email
+- String picture
+}
+class com.showmycnft.root.config.JpaConfig {
+}
+class com.showmycnft.root.config.auth.dto.OAuthAttributes {
+- Map<String,Object> attributes
+- String nameAttributeKey
+- String name
+- String email
+- String picture
++ {static} OAuthAttributes of(String,String,Map<String,Object>)
+- {static} OAuthAttributes ofGoogle(String,Map<String,Object>)
+- {static} OAuthAttributes ofNaver(String,Map<String,Object>)
++ User toEntity()
+}
+interface com.showmycnft.root.domain.posts.PostsRepository {
+~ List<Posts> findAllDesc()
+}
+class com.showmycnft.root.domain.user.User {
+- Long id
+- String name
+- String email
+- String picture
+- Role role
++ User update(String,String)
++ String getRoleKey()
+}
+class com.showmycnft.root.web.dto.PostsListResponseDto {
+- Long id
+- String title
+- String author
+- LocalDateTime modifiedDate
+}
+class com.showmycnft.root.web.dto.HelloResponseDto {
+- String name
+- int amount
+}
+class com.showmycnft.root.web.dto.PostsSaveRequestDto {
+- String title
+- String content
+- String author
++ Posts toEntity()
+}
+class com.showmycnft.root.web.PostsApiController {
+- PostsService postsService
++ Long save(PostsSaveRequestDto)
++ Long update(Long,PostsUpdateRequestDto)
++ PostsResponseDto findById(Long)
++ Long delete(Long)
+}
+enum com.showmycnft.root.domain.user.Role {
++  GUEST
++  USER
+- String key
+- String title
+}
+abstract class com.showmycnft.root.domain.BaseTimeEntity {
+- LocalDateTime createdDate
+- LocalDateTime modifiedDate
+}
+class com.showmycnft.root.web.dto.PostsResponseDto {
+- Long id
+- String title
+- String content
+- String author
+}
+class com.showmycnft.root.domain.posts.Posts {
+- Long id
+- String title
+- String content
+- String author
++ void update(String,String)
+}
+class com.showmycnft.root.Application {
++ {static} void main(String[])
+}
+class com.showmycnft.root.web.dto.PostsUpdateRequestDto {
+- String title
+- String content
+}
+class com.showmycnft.root.web.IndexController {
+- PostsService postsService
++ String index()
++ String toMain(Model,SessionUser)
++ String postsSave()
++ String postsUpdate(Long,Model)
+}
+class com.showmycnft.root.service.posts.PostsService {
+- PostsRepository postsRepository
++ Long save(PostsSaveRequestDto)
++ Long update(Long,PostsUpdateRequestDto)
++ void delete(Long)
++ List<PostsListResponseDto> findAllDesc()
++ PostsResponseDto findById(Long)
+}
+class com.showmycnft.root.config.auth.SecurityConfig {
+- CustomOAuth2UserService customOAuth2UserService
+# SecurityFilterChain filterChain(HttpSecurity)
+}
+class com.showmycnft.root.config.WebConfig {
+- LoginUserArgumentResolver loginUserArgumentResolver
++ void addArgumentResolvers(List<HandlerMethodArgumentResolver>)
+}
+class com.showmycnft.root.web.HelloController {
++ String hello()
++ HelloResponseDto helloDto(String,int)
+}
+interface com.showmycnft.root.domain.user.UserRepository {
+~ Optional<User> findByEmail(String)
+}
+
+
+org.springframework.web.method.support.HandlerMethodArgumentResolver <|.. com.showmycnft.root.config.auth.LoginUserArgumentResolver
+org.springframework.security.oauth2.client.userinfo.OAuth2UserService <|.. com.showmycnft.root.config.auth.CustomOAuth2UserService
+java.io.Serializable <|.. com.showmycnft.root.config.auth.dto.SessionUser
+org.springframework.data.jpa.repository.JpaRepository <|-- com.showmycnft.root.domain.posts.PostsRepository
+com.showmycnft.root.domain.BaseTimeEntity <|-- com.showmycnft.root.domain.user.User
+com.showmycnft.root.domain.BaseTimeEntity <|-- com.showmycnft.root.domain.posts.Posts
+org.springframework.web.servlet.config.annotation.WebMvcConfigurer <|.. com.showmycnft.root.config.WebConfig
+org.springframework.data.jpa.repository.JpaRepository <|-- com.showmycnft.root.domain.user.UserRepository
+@enduml

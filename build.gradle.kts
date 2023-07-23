@@ -2,6 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "3.0.5"
     id("io.spring.dependency-management") version "1.1.0"
+    id ("jacoco")
 }
 
 group = "com.showmycnft"
@@ -10,6 +11,29 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+}
+
+
+tasks.jacocoTestReport {
+    // ... (생략) ...
+
+    finalizedBy("jacocoTestCoverageVerification")
+    dependsOn("test")
+}
+
+
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = "CLASS"
+
+            limit {
+                counter = "BRANCH"
+                value = "COVEREDRATIO"
+                minimum = "0.00".toBigDecimal()
+            }
+        }
+    }
 }
 
 dependencies {
@@ -34,4 +58,7 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    finalizedBy("jacocoTestReport")
 }
+
+
