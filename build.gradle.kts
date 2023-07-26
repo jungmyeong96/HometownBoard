@@ -16,7 +16,11 @@ repositories {
 
 tasks.jacocoTestReport {
     // ... (생략) ...
-
+    reports {
+        html.required.set(true)
+        xml.required.set(false)
+        csv.required.set(false)
+    }
     finalizedBy("jacocoTestCoverageVerification")
     dependsOn("test")
 }
@@ -30,7 +34,16 @@ tasks.jacocoTestCoverageVerification {
             limit {
                 counter = "BRANCH"
                 value = "COVEREDRATIO"
-                minimum = "0.00".toBigDecimal()
+                minimum = "0.10".toBigDecimal()
+            }
+        }
+        rule {
+            element = "CLASS"
+
+            limit {
+                counter = "INSTRUCTION"
+                value = "COVEREDRATIO"
+                minimum = "0.10".toBigDecimal()
             }
         }
     }
@@ -51,14 +64,24 @@ dependencies {
     testImplementation("org.springframework.security:spring-security-test")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.mockito:mockito-core:4.8.0")
     testImplementation("junit:junit:4.13.1")
     annotationProcessor("org.projectlombok:lombok")
     testAnnotationProcessor("org.projectlombok:lombok")
 }
 
-tasks.test {
+tasks.withType<Test> {
     useJUnitPlatform()
-    finalizedBy("jacocoTestReport")
 }
 
+//tasks.test {
+//    useJUnitPlatform()
+//    finalizedBy("jacocoTestReport")
+//}
+
+tasks.getByName<Test>("test") {
+    extensions.configure(JacocoTaskExtension::class) {
+        destinationFile = file("$buildDir/jacoco/$name.exec")
+    }
+}
 

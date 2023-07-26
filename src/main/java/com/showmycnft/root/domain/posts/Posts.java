@@ -11,8 +11,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @NoArgsConstructor //기본 생성자 자동추가
 @Entity //테이블과 링크될 클래스
 public class Posts extends BaseTimeEntity {
@@ -28,6 +32,7 @@ public class Posts extends BaseTimeEntity {
     private String content;
 
     private String author;
+    private LocalDateTime modifiedDate;
 
     @Builder // 해당 클래스의 빌더 패턴 클래스 생성 , 어느 필드에 어떤 값을 채워야 할지 명확하게 인지할 수 있습니다.
     public Posts(String title, String content, String author) {

@@ -3,6 +3,7 @@ package com.showmycnft.root.web;
 import com.showmycnft.root.config.auth.SecurityConfig;
 import com.showmycnft.root.web.HelloController;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -29,6 +30,7 @@ public class HelloControllerTest {
     private MockMvc mvc; //웹 API를 테스트할 때 사용, 테스트 시작점
 
 
+    @DisplayName("HELLO url테스트")
     @WithMockUser(roles="USER")
     @Test
     public void ReturnHello() throws Exception {
@@ -40,6 +42,7 @@ public class HelloControllerTest {
                 .andExpect(content().string(hello)); //결과, 본문 내용 검증
     }
 
+    @DisplayName("기본 유저 테스트")
     @WithMockUser(roles="USER")
     @Test
     public void ReturnHelloDto() throws Exception {

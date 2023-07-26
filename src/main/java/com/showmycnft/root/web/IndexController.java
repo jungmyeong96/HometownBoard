@@ -25,7 +25,7 @@ public class IndexController {
     }
 
     @GetMapping("/index") // 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있습니다!
-    public String toMain(Model model, @LoginUser SessionUser user) { // 기존 세션 정보 값 가져오는 중복 실행 함수를 어노테이션으로 대체
+    public String 동(Model model, @LoginUser SessionUser user) { // 기존 세션 정보 값 가져오는 중복 실행 함수를 어노테이션으로 대체
         model.addAttribute("posts", postsService.findAllDesc()); //데이터를 posts에 담아 저장
 
         if (user != null) {

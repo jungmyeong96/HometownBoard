@@ -8,6 +8,7 @@ import com.showmycnft.root.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -59,6 +60,7 @@ public class PostsApiControllerTest {
     }
 
 
+    @DisplayName("글 등록 테스트")
     @Test
     @WithMockUser(roles="USER")
     public void testSetPosts() throws Exception {
