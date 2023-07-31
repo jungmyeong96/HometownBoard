@@ -80,8 +80,8 @@ tasks.withType<Test> {
 //}
 
 tasks.getByName<Test>("test") {
-    extensions.configure(JacocoTaskExtension::class) {
-        destinationFile = file("$buildDir/jacoco/$name.exec")
-    }
+//    extensions.configure(JacocoTaskExtension::class) {
+//        destinationFile = file("$buildDir/jacoco/$name.exec")
+//    }
 }
 
